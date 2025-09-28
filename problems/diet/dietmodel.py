@@ -22,7 +22,7 @@ def solve(categories, minNutrition, maxNutrition, foods, cost, nutritionValues):
     m.addConstrs(
         (gp.quicksum(nutritionValues[f,c]*buy[f] for f in foods) <= maxNutrition[c]
         for c in categories),
-        name="min",
+        name="max",
     )
     
     # Solution print out
